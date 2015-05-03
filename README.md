@@ -5,6 +5,9 @@ Based on https://github.com/timofurrer/w1thermsensor
 # Requirements
 Python
 
+Add
+`dtoverlay=w1-gpio` to `/boot/config.txt` and reboot
+
 # Usage
 Command line example:
 
