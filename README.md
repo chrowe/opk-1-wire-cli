@@ -16,9 +16,8 @@ $ ./install
 installing...
 done.
 $ ./detect
-Found temper1 at path:
-28-0000052fc128
-28-0000053055be
+Sensor 0000053055be has temperature 24.62
+Sensor 0000052fc128 has temperature 24.56
 $ ./pull --path 28-0000053055be
 42
 ```
