@@ -5,8 +5,16 @@ from w1thermsensor import W1ThermSensor
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-p","--path", required=True, help="Specify which sensor path to use")
+parser.add_argument("-s","--scale", help="Choose fahrenheit (f) or celsius (c)")
 args = parser.parse_args()
 
 sensor = W1ThermSensor(W1ThermSensor.THERM_SENSOR_DS18B20, args.path)
 temperature_in_celsius = sensor.get_temperature()
-print (temperature_in_celsius)
+temperature_in_fahrenheit = sensor.get_temperature(W1ThermSensor.DEGREES_F)
+
+if args.scale == "fahrenheit" or args.scale == "f":
+    print (temperature_in_fahrenheit)
+elif args.scale == "celsius" or args.scale == "c":
+    print (temperature_in_celsius)
+else:
+    print (temperature_in_celsius)
